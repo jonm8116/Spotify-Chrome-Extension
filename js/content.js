@@ -133,11 +133,23 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse){
         docTitle = docTitle.replace(/(ft [A-Za-z0-9 ]*)/g, "");
         docTitle = docTitle.replace(/(ft. [A-Za-z0-9 ]*)/g, "");
         var title = docTitle.split("-");
-        if(title.length <= 2){
-            title = title[0].split(":");
-        }
+        var artist = title[0];
         var songTitle = title[1].trim();
-        searchSongs(songTitle, title[0], false);
+        if(title.length <= 2){
+            if(title.includes(":")) {
+                title = title[0].split(":");
+            }
+            else {
+                //Get channel name for artist
+                var tmp = document.getElementsByClassName('ytd-video-owner-renderer');
+                var channelTitleElement = tmp[3].getElementsByClassName('yt-formatted-string');
+                artist = channelTitleElement[0].text;
+                songTitle = title[0];
+                songTitle = songTitle.trim();
+            }
+
+        }
+        searchSongs(songTitle, artist, false);
     }
 
 });
