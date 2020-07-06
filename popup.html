@@ -1,0 +1,113 @@
+<html>
+<head>
+    <title>Muzy Extension</title>
+    <style type="text/css">
+        /*   play button style   */
+        .circle{
+            height: 120px;
+            width: 100px;
+            background-color: white;
+            border-radius:70%;
+        }
+
+        .btn-group button{
+            padding: 10px 24px;
+            float: left;
+            display: block;
+            margin-right: 5px;
+        }
+        .btn-group button:not(:last-child){
+            border-right: none;
+        }
+        .btn-group:after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        body{
+            width: 500px !important;
+            background-color: rgba(25,20,20,0.75) !important;
+            color: white !important;
+        }
+    </style>
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    <link href="css/playbutton.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+    <!--    
+    
+    old design:
+
+        Layout for music player:
+        1. Image taken from thumbnail of YouTube vid
+        2. Play/Pause button
+        3. Skip next button
+        4. Add Button
+        5. Remove button
+        6. Volume Button thing
+
+    #############################
+
+    new design
+
+    -> notes: - have extension link to person's spotify account
+              - person will set their account in a settings tab
+              
+
+    -->
+    <div>
+        <div style="text-align:center;">
+            <i class="material-icons">
+            opacity
+            </i>
+        </div>
+        <div style="width:100%;">
+            <div style="display: inline; width:50%;">
+                <h6>Muzy Extension</h6>
+            </div>
+            
+            <div class="play-btn-container">
+                <a class="play-btn"></a>
+            </div>
+
+            <div style="margin-top: -5%;float: right">
+                <audio src="">
+                    <source src="" type= "">
+                <button>Play</button> 
+                <button>Pause</button> 
+                <button>Vol +</button> 
+                <button>Vol -</button> 
+                </audio>
+            </div>
+            <div style="display: inline; float: right; width: 50%;">
+                <select id="playlists">
+                </select>
+            </div>
+        </div>
+
+        <h5>Song</h5><hr/>
+     
+
+        <h5>Cover Art</h5><hr/>
+
+        <div class="btn-group">
+            <button id="play-btn" class="btn btn-primary">Play/Pause</button>
+            <button id='skip-btn'>Skip</button>
+        </div>
+        <div class="btn-group">
+            <button id='add-btn'>Add</button>
+            <button>Remove</button>
+        </div>
+        <div class="btn-group">
+            <button id='up-btn'>Volume up</button>
+            <button id='down-btn'>Volume down</button>
+        </div>
+        <div class="btn-group">
+            <button id="playlist-img-upload">Upload img</button>
+        </div>
+    </div>
+</body>
+<script src="./js/player.js"></script>
+<script src="lib/jquery-3.5.1.min.js"></script>
+</html>
