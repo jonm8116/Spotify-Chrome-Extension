@@ -1,4 +1,4 @@
-<h1 align="center">Spotify Chrome Extension</h1>
+<h1 align="center">Spotify Chrome Extension :headphones:</h1>
 <h3 align="center">(Name TBD)</h3>
 <h5 align="center">A Chrome Extension that lets users interface between YouTube and Spotify :musical_score:</h5>
 
@@ -18,3 +18,9 @@
 - [ ] Creating playlists directly from the extension
 - [ ] Button to create monthly playlists
 - [ ] Play user's playlists from the extension directly
+
+
+## Installation
+* Download or git clone this repo
+* Go to chrome://extensions in your Chrome browser
+* Click load unpacked extension and select this folder. Then you're good to go!
